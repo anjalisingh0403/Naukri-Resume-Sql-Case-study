@@ -1,12 +1,15 @@
 # Naukri-Resume-Sql-Case-study
 
--- count the no of users per month in the year 2024
+-- count the no of users per month in the year 2024?
+
+
 select count(user_id) as no_of_users , date_format(registration_datetime, "%Y-%m") as month 
 from user_registration
 where year(registration_datetime) = 2024
 group by date_format(registration_datetime, "%Y-%m");
 
 -- what is the count of registration every month on the "Resume Now" portal for 2024 ?
+
 
 SELECT 
     DATE_FORMAT(u.registration_datetime, "%Y-%m") AS month,
@@ -52,7 +55,7 @@ using(user_id)
 group by u.user_id
 having count(r.resume_id) <3;
 
--- create a list of users who subscribed in 2024 on the 'Zety' portal and get the experience_years on the first resume. 
+-- create a list of users who subscribed in 2024 on the 'Zety' portal and get the experience_years on the first resume?
 
 
 select u.*, p.portal_code
