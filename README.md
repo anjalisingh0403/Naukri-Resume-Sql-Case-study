@@ -47,6 +47,8 @@ using(user_id)
 group by u.user_id )
 select * from cte
 where no_of_resumes <3;
+
+
 -- or -- 
 
 select count(r.resume_id) as no_of_resumes, u.user_id 
